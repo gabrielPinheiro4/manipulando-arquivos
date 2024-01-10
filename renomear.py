@@ -1,4 +1,4 @@
-import os, platform
+import os
 
 def renomear():
     print()
@@ -14,22 +14,22 @@ def renomear():
         while True:
             arquivo = input('Digite o caminho para o arquivo que você deseja mudar: ')
 
-            if platform.system() == 'Linux' and '/' not in arquivo:
+            if os.name == 'posix' and '/' not in arquivo:
                 print('Você precisa digitar o caminho para seu arquivo')
                 continue
 
-            elif platform.system() == 'Windows' and '\\' not in arquivo:
+            elif os.name == 'nt' and '\\' not in arquivo:
                 print('Você precisa digitar o caminho para seu arquivo')
                 continue
 
             while True:
                 novo_nome = input('Digite o caminho completo e o novo nome do arquivo: ')
 
-                if platform.system() == 'Linux' and '/' not in novo_nome:
+                if os.name == 'posix' and '/' not in novo_nome:
                     print('Você precisa digitar o caminho completo')
                     continue
 
-                elif platform.system() == 'Windows' and '\\' not in novo_nome:
+                elif os.name == 'nt' and '\\' not in novo_nome:
                     print('Você precisa digitar o caminho para seu arquivo')
                     continue 
 
